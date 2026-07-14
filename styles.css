@@ -337,21 +337,25 @@ body.unlocked .scroll-hint {
   align-items: center;
   justify-content: center;
   overflow-x: hidden;
-  padding: max(3.5rem, env(safe-area-inset-top))
-           max(2rem,   env(safe-area-inset-right))
-           max(3.5rem, env(safe-area-inset-bottom))
-           max(2rem,   env(safe-area-inset-left));
+  padding: max(3rem, env(safe-area-inset-top))
+           max(2rem, env(safe-area-inset-right))
+           max(3rem, env(safe-area-inset-bottom))
+           max(2rem, env(safe-area-inset-left));
 }
 
 .date-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(18px, 3vh, 34px);
   text-align: center;
   direction: rtl;
-  width: min(90%, 480px);
+  width: min(88%, 620px);
+  margin: auto;
 }
 
 .calendar-graduation-icon {
-  width: clamp(72px, 18vw, 108px);
-  margin: 0 auto 3rem;
+  width: clamp(62px, 15vw, 90px);
 }
 
 .calendar-graduation-icon svg {
@@ -362,39 +366,38 @@ body.unlocked .scroll-hint {
 
 .date-intro {
   font-family: 'Amiri', serif;
-  font-size: clamp(1.3rem, 5vw, 2rem);
+  font-size: clamp(1.2rem, 4.5vw, 1.8rem);
   font-weight: 400;
-  color: #4A4038;
-  line-height: 1.9;
-  margin-bottom: 0.5rem;
+  color: #51463D;
+  line-height: 1.7;
 }
 
 .day-name {
   font-family: 'Amiri', serif;
-  font-size: clamp(1.15rem, 4.5vw, 1.7rem);
+  font-size: clamp(1.05rem, 4vw, 1.5rem);
   font-weight: 400;
-  color: #4A4038;
-  line-height: 1.9;
-  margin-bottom: 1.8rem;
+  color: #51463D;
+  line-height: 1.7;
 }
 
 .gregorian-date {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2.8rem, 12vw, 5.5rem);
+  font-size: clamp(2.5rem, 10vw, 4.8rem);
   font-weight: 400;
-  letter-spacing: 0.08em;
-  color: #4A4038;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  color: #51463D;
   line-height: 1.15;
   direction: ltr;
-  margin-bottom: 1.5rem;
 }
 
 .hijri-date {
   font-family: 'Amiri', serif;
-  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  font-size: clamp(1rem, 3.8vw, 1.35rem);
   font-weight: 400;
-  color: #4A4038;
-  line-height: 1.9;
+  color: #51463D;
+  opacity: 0.9;
+  line-height: 1.7;
 }
 
 /* Entrance: elements start hidden and rise into view */
@@ -404,15 +407,15 @@ body.unlocked .scroll-hint {
 .date-section .gregorian-date,
 .date-section .hijri-date {
   opacity: 0;
-  transform: translateY(22px);
+  transform: translateY(20px);
   transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
 .date-section.in-view .calendar-graduation-icon { opacity: 1; transform: translateY(0); transition-delay: 0.1s;  }
-.date-section.in-view .date-intro               { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
-.date-section.in-view .day-name                 { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
-.date-section.in-view .gregorian-date           { opacity: 1; transform: translateY(0); transition-delay: 0.75s; }
-.date-section.in-view .hijri-date               { opacity: 1; transform: translateY(0); transition-delay: 0.9s;  }
+.date-section.in-view .date-intro               { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+.date-section.in-view .day-name                 { opacity: 1; transform: translateY(0); transition-delay: 0.52s; }
+.date-section.in-view .gregorian-date           { opacity: 1; transform: translateY(0); transition-delay: 0.72s; }
+.date-section.in-view .hijri-date               { opacity: 1; transform: translateY(0); transition-delay: 0.88s; }
 
 /* ── Reduced motion ── */
 
