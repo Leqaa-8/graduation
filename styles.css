@@ -67,13 +67,6 @@ body {
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-/* DEBUG: visible outlines — remove after confirming alignment */
-.seal-area,
-.text-area {
-  outline: 2px solid red;
-  background: rgba(255, 0, 0, 0.15);
-}
-
 /* left / top / width / height are set by JavaScript */
 .seal-area {
   border-radius: 50%;
