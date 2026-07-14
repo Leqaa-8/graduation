@@ -22,7 +22,7 @@ function positionOverlays() {
   const cropX = (dispW - cw) / 2;
   const cropY = (dispH - ch) / 2;
 
-  function place(el, item) {
+  function place(el, item, offsetY = 0) {
     // Convert image-space center to screen-space center
     const cx = item.cx * IMG_W * scale - cropX;
     const cy = item.cy * IMG_H * scale - cropY;
@@ -31,12 +31,12 @@ function positionOverlays() {
     const h  = item.h  * IMG_H * scale;
 
     el.style.left   = (cx - w / 2) + 'px';
-    el.style.top    = (cy - h / 2) + 'px';
+    el.style.top    = (cy - h / 2 + offsetY) + 'px';
     el.style.width  = w + 'px';
     el.style.height = h + 'px';
   }
 
-  place(document.getElementById('sealArea'), SEAL);
+  place(document.getElementById('sealArea'), SEAL, -32);
   place(document.getElementById('textArea'), TEXT);
 }
 
