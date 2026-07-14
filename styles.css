@@ -132,8 +132,8 @@ body {
   justify-content: center;
   overflow: hidden;
   background: #120808;
-  /* shift content upward so title clears the bouquet/silhouette */
-  padding-bottom: 22%;
+  /* slight bottom offset keeps content near visual center */
+  padding-bottom: 2%;
 }
 
 /* Animated film-grain — sits above everything, pointer-events:none */
