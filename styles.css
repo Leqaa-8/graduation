@@ -215,9 +215,9 @@ body {
 .graduation-title {
   font-family: 'Aref Ruqaa', 'Amiri', serif;
   font-size: clamp(2rem, 7vw, 3.4rem);
-  font-weight: 500;
-  color: #F3E7D3;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  font-weight: 400;
+  color: #F5E8D3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   letter-spacing: 0.03em;
   margin: 0;
   opacity: 0;
