@@ -1,0 +1,107 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #f0e6d4;
+}
+
+/* Pages */
+
+.page {
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Page 1 */
+
+#page1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.clickable {
+  position: absolute;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+}
+
+/* Seal: circle centered on the wax seal in the image */
+.seal-area {
+  left: 50%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+  width: 14%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.seal-area:hover,
+.seal-area:active {
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.85;
+}
+
+/* Text area: centered on "انقر هنا" */
+.text-area {
+  left: 50%;
+  top: 77%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 5.5%;
+  border-radius: 6px;
+}
+
+.text-area:hover,
+.text-area:active {
+  transform: translate(-50%, -50%) scale(1.08);
+  opacity: 0.85;
+}
+
+/* Page 2 */
+
+#page2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0e6d4;
+}
+
+.page2-content {
+  text-align: center;
+  padding: 2rem;
+}
+
+.bismillah {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  color: #4a1a1a;
+  margin-bottom: 1.5rem;
+  direction: rtl;
+}
+
+.temp-note {
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+  color: #7a5a5a;
+  font-family: sans-serif;
+}
