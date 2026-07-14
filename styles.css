@@ -217,8 +217,8 @@ body {
   font-style: inherit;
   font-size: clamp(2rem, 7vw, 3.4rem);
   font-weight: 400;
-  color: inherit;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  color: #FFFFFF;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
   letter-spacing: 0;
   line-height: 1.6;
   transform: none;
