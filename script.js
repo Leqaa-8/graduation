@@ -78,6 +78,8 @@ function openInvitation() {
 
 document.addEventListener('DOMContentLoaded', function () {
   const img = document.querySelector('.image-container img');
+  const video = document.querySelector('.page2-video');
+  video.playbackRate = 0.65;
 
   if (img.complete) {
     positionOverlays();
