@@ -55,9 +55,9 @@ function openInvitation() {
     page1.classList.add('page-exit');
   }, 150);
 
-  // Step 3 (720 ms): page 2 rises and fades in
+  // Step 3 (720 ms): page 2 rises and fades in; text stagger begins
   setTimeout(() => {
-    page2.classList.add('page-enter-active');
+    page2.classList.add('page-enter-active', 'text-revealed');
   }, 720);
 
   // Step 4 (1450 ms): settle final states, re-enable interaction
