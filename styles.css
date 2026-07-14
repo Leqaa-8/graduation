@@ -28,8 +28,8 @@ body.unlocked {
 .page {
   position: fixed;           /* default for page1 */
   inset: 0;
-  width: 100vw;
-  height: 100vh;
+  /* width/height intentionally omitted — inset:0 defines all four edges,
+     and explicit 100vw causes an RTL right-shift on iOS Safari */
   height: 100dvh;
   opacity: 0;
   pointer-events: none;
