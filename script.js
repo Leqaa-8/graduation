@@ -57,6 +57,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   window.addEventListener('resize', positionOverlays);
   window.addEventListener('orientationchange', positionOverlays);
+  // Safari fires this when the toolbar collapses / expands
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', positionOverlays);
+  }
 
   document.getElementById('sealArea').addEventListener('click', openInvitation);
   document.getElementById('textArea').addEventListener('click', openInvitation);
