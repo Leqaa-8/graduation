@@ -2,7 +2,7 @@ const IMG_W = 1024;
 const IMG_H = 1536;
 
 // Positions in the original image (as fractions of IMG_W / IMG_H)
-const SEAL = { cx: 0.515, cy: 0.569, w: 0.08, h: 0.055 };
+const SEAL = { cx: 0.515, cy: 0.600, w: 0.08, h: 0.055 };
 const TEXT = { cx: 0.50,  cy: 0.798, w: 0.16, h: 0.025 };
 
 function positionOverlays() {
