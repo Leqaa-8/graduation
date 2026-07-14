@@ -132,8 +132,21 @@ body {
   justify-content: center;
   overflow: hidden;
   background: #120808;
-  /* shift flex center upward so text clears the silhouette at bottom */
-  padding-bottom: 14%;
+  /* shift content upward so title clears the bouquet/silhouette */
+  padding-bottom: 22%;
+}
+
+/* Animated film-grain — sits above everything, pointer-events:none */
+#page2::after {
+  content: '';
+  position: absolute;
+  inset: -50%;          /* oversized so shifting doesn't reveal edges */
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  animation: grainShift 0.45s steps(1) infinite;
 }
 
 .page2-video {
@@ -146,23 +159,28 @@ body {
   z-index: 0;
 }
 
+/* Dark base + cinematic vignette in one layer */
 .video-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.25);
   z-index: 1;
+  background:
+    radial-gradient(ellipse at center, transparent 38%, rgba(0, 0, 0, 0.72) 100%),
+    rgba(0, 0, 0, 0.18);
 }
 
 /* ── Invitation text ── */
 
 .invitation-content {
   position: relative;
-  z-index: 2;
+  z-index: 3;           /* above vignette layer, below grain */
   text-align: center;
   direction: rtl;
   width: min(88%, 650px);
   padding-left:  max(1.5rem, env(safe-area-inset-left));
   padding-right: max(1.5rem, env(safe-area-inset-right));
+  /* gentle perpetual float — starts after all text has revealed */
+  animation: floatText 8s ease-in-out 2.2s infinite;
 }
 
 .poem {
@@ -170,8 +188,8 @@ body {
   font-size: clamp(1.1rem, 3.8vw, 1.8rem);
   line-height: 2;
   color: #f5ede0;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  margin-bottom: 2.5rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  margin-bottom: 3rem;
   opacity: 0;
 }
 
@@ -180,8 +198,8 @@ body {
   font-size: clamp(1rem, 3.4vw, 1.5rem);
   line-height: 2;
   color: #f5ede0;
-  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-  margin-bottom: 2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  margin-bottom: 2.5rem;
   opacity: 0;
 }
 
@@ -189,8 +207,8 @@ body {
   direction: ltr;
   font-size: 0.8rem;
   letter-spacing: 0.3em;
-  color: rgba(243, 231, 211, 0.5);
-  margin-bottom: 2rem;
+  color: rgba(243, 231, 211, 0.45);
+  margin-bottom: 2.5rem;
   opacity: 0;
 }
 
@@ -199,13 +217,14 @@ body {
   font-size: clamp(2rem, 7vw, 3.4rem);
   font-weight: 500;
   color: #F3E7D3;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   letter-spacing: 0.03em;
   margin: 0;
   opacity: 0;
 }
 
-/* Staggered reveal — poem → message → divider → title */
+/* ── Staggered text reveal ── */
+
 #page2.text-revealed .poem {
   animation: textReveal 0.9s ease-out 0.3s  forwards;
 }
@@ -227,6 +246,24 @@ body {
   to   { opacity: 1; transform: translateY(0px)  scale(1);    }
 }
 
+/* Slow float on the whole text block */
+@keyframes floatText {
+  0%,  100% { transform: translateY(0px);  }
+  50%        { transform: translateY(-3px); }
+}
+
+/* Random grain position shifts (steps = instant jumps, not interpolation) */
+@keyframes grainShift {
+  0%   { transform: translate(0,    0);    }
+  14%  { transform: translate(-3%,  2%);   }
+  28%  { transform: translate( 2%, -3%);   }
+  42%  { transform: translate(-1%,  4%);   }
+  57%  { transform: translate( 4%, -1%);   }
+  71%  { transform: translate(-4%,  3%);   }
+  85%  { transform: translate( 3%, -4%);   }
+  100% { transform: translate(0,    0);    }
+}
+
 /* ── Reduced motion ── */
 
 @media (prefers-reduced-motion: reduce) {
@@ -238,6 +275,11 @@ body {
 
   @keyframes pageExit  { to { opacity: 0; } }
   @keyframes pageEnter { to { opacity: 1; } }
+
+  .invitation-content,
+  #page2::after {
+    animation: none;
+  }
 
   #page2.text-revealed .poem,
   #page2.text-revealed .invitation-message,
