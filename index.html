@@ -5,7 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <title>Graduation Invitation</title>
+  <title>حفل تخرجي</title>
+  <meta name="description" content="أدعوكم بكل حب لمشاركتي فرحة التخرج 🤍">
+
+  <!-- Open Graph (WhatsApp, iMessage, Facebook) -->
+  <meta property="og:type"              content="website">
+  <meta property="og:site_name"         content="LEQAA">
+  <meta property="og:title"             content="حفل تخرجي">
+  <meta property="og:description"       content="أدعوكم بكل حب لمشاركتي فرحة التخرج 🤍">
+  <meta property="og:url"               content="https://leqaa-8.github.io/graduation/">
+  <meta property="og:image"             content="https://leqaa-8.github.io/graduation/images/invitation.png">
+  <meta property="og:image:secure_url"  content="https://leqaa-8.github.io/graduation/images/invitation.png">
+  <meta property="og:image:alt"         content="حفل تخرجي">
+  <meta property="og:image:width"       content="1024">
+  <meta property="og:image:height"      content="1536">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="حفل تخرجي">
+  <meta name="twitter:description" content="أدعوكم بكل حب لمشاركتي فرحة التخرج 🤍">
+  <meta name="twitter:image"       content="https://leqaa-8.github.io/graduation/images/invitation.png">
+
+  <link rel="canonical" href="https://leqaa-8.github.io/graduation/">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&display=swap" rel="stylesheet">
@@ -46,10 +68,10 @@
       <p class="class-year">2026</p>
     </div>
 
-    <!-- Subtle scroll indicator, shown after the transition -->
-    <div class="scroll-hint" aria-hidden="true">
-      <span>اسحب للأسفل</span>
-      <svg width="14" height="9" viewBox="0 0 14 9" fill="none">
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="si-text">اسحب للأسفل</span>
+      <svg class="si-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
         <polyline points="1,1 7,8 13,1" stroke="currentColor" stroke-width="1.5"
                   stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
@@ -60,36 +82,36 @@
   <section id="date-section" class="date-section" aria-label="تاريخ حفل التخرج">
     <div class="date-content">
 
-      <div class="calendar-graduation-icon">
-        <svg viewBox="0 0 100 125" fill="none" xmlns="http://www.w3.org/2000/svg"
-             stroke="#51463D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <!-- Mortarboard top plate -->
-          <polygon points="50,5 88,22 50,39 12,22"/>
-          <!-- Stem connecting cap to calendar -->
-          <line x1="50" y1="39" x2="50" y2="53"/>
-          <!-- Tassel cord -->
-          <line x1="79" y1="22" x2="79" y2="37"/>
+      <div class="graduation-cap-icon">
+        <svg viewBox="0 0 100 72" fill="none" xmlns="http://www.w3.org/2000/svg"
+             stroke="#4E433A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+
+          <!-- Button at crown center -->
+          <circle cx="50" cy="5" r="2.5" stroke-width="1.2"/>
+
+          <!-- Flat board (mortarboard, diamond perspective) -->
+          <polygon points="50,5 84,22 50,39 16,22"/>
+
+          <!-- Skull cap — left wall -->
+          <line x1="28" y1="30" x2="28" y2="56"/>
+
+          <!-- Skull cap — right wall -->
+          <line x1="72" y1="30" x2="72" y2="56"/>
+
+          <!-- Skull cap — bottom arc -->
+          <path d="M 28,56 Q 50,68 72,56"/>
+
+          <!-- Tassel cord from right corner of board -->
+          <line x1="84" y1="22" x2="84" y2="40"/>
+
+          <!-- Tassel knot -->
+          <line x1="80" y1="40" x2="88" y2="40" stroke-width="1.1"/>
+
           <!-- Tassel threads -->
-          <line x1="76" y1="37" x2="73" y2="45"/>
-          <line x1="79" y1="37" x2="79" y2="45"/>
-          <line x1="82" y1="37" x2="85" y2="45"/>
-          <!-- Calendar binding rings -->
-          <line x1="30" y1="48" x2="30" y2="59"/>
-          <line x1="70" y1="48" x2="70" y2="59"/>
-          <!-- Calendar body -->
-          <rect x="12" y="53" width="76" height="68" rx="5"/>
-          <!-- Header fill (subtle) -->
-          <rect x="12" y="53" width="76" height="18" rx="5"
-                fill="#51463D" fill-opacity="0.08" stroke="none"/>
-          <!-- Header divider line -->
-          <line x1="12" y1="71" x2="88" y2="71" stroke-width="1.1"/>
-          <!-- Date grid — 2 rows × 3 columns -->
-          <rect x="20" y="79" width="10" height="9" rx="2" stroke-width="1.4"/>
-          <rect x="45" y="79" width="10" height="9" rx="2" stroke-width="1.4"/>
-          <rect x="70" y="79" width="10" height="9" rx="2" stroke-width="1.4"/>
-          <rect x="20" y="95" width="10" height="9" rx="2" stroke-width="1.4"/>
-          <rect x="45" y="95" width="10" height="9" rx="2" stroke-width="1.4"/>
-          <rect x="70" y="95" width="10" height="9" rx="2" stroke-width="1.4"/>
+          <line x1="81" y1="40" x2="77" y2="53"/>
+          <line x1="84" y1="40" x2="84" y2="53"/>
+          <line x1="87" y1="40" x2="91" y2="53"/>
+
         </svg>
       </div>
 
@@ -99,7 +121,183 @@
       <p class="hijri-date">الموافق 7 / 3 / 1448 هـ</p>
 
     </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator si-dark" aria-hidden="true">
+      <span class="si-text">اسحب للأسفل</span>
+      <svg class="si-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
+        <polyline points="1,1 7,8 13,1" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
   </section>
+
+  <!-- Countdown section -->
+  <section id="countdown-section" class="countdown-section" aria-label="العد التنازلي">
+
+    <!-- Drifting fog/haze -->
+    <div class="cd-fog" aria-hidden="true"></div>
+
+    <!-- Ambient background sparkles -->
+    <div class="cd-sparkles" aria-hidden="true">
+      <span class="cd-spark s1"></span>
+      <span class="cd-spark s2"></span>
+      <span class="cd-spark s3"></span>
+      <span class="cd-spark s4"></span>
+      <span class="cd-spark s5"></span>
+      <span class="cd-spark s6"></span>
+    </div>
+
+    <!-- Heading -->
+    <div class="cd-heading">
+      <h2 class="cd-title">ننتظر اللحظات الجميلة</h2>
+      <p class="cd-subtitle">كل ثانية تقربنا من يومٍ انتظرناه طويلًا.</p>
+    </div>
+
+    <!-- Thin divider -->
+    <div class="cd-rule" aria-hidden="true"></div>
+
+    <!-- Countdown grid -->
+    <div class="cd-grid" role="timer" aria-live="off">
+
+      <div class="cd-item">
+        <span class="cd-num" id="cd-days">00</span>
+        <span class="cd-label">أيام</span>
+      </div>
+
+      <div class="cd-sep" aria-hidden="true">
+        <span class="cd-dot"></span>
+        <span class="cd-dot"></span>
+      </div>
+
+      <div class="cd-item">
+        <span class="cd-num" id="cd-hours">00</span>
+        <span class="cd-label">ساعات</span>
+      </div>
+
+      <div class="cd-sep" aria-hidden="true">
+        <span class="cd-dot"></span>
+        <span class="cd-dot"></span>
+      </div>
+
+      <div class="cd-item">
+        <span class="cd-num" id="cd-minutes">00</span>
+        <span class="cd-label">دقائق</span>
+      </div>
+
+      <div class="cd-sep" aria-hidden="true">
+        <span class="cd-dot"></span>
+        <span class="cd-dot"></span>
+      </div>
+
+      <div class="cd-item">
+        <span class="cd-num" id="cd-seconds">00</span>
+        <span class="cd-label">ثوانٍ</span>
+      </div>
+
+    </div>
+
+    <!-- Bottom text -->
+    <p class="cd-bottom">اقتربت اللحظة التي سيزهر فيها كل تعبٍ بالفرح.</p>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span class="si-text">اسحب للأسفل</span>
+      <svg class="si-arrow" width="14" height="9" viewBox="0 0 14 9" fill="none">
+        <polyline points="1,1 7,8 13,1" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Venue section -->
+  <section id="venue-section" class="venue-section" aria-label="مكان الاحتفال">
+
+    <!-- Heading -->
+    <div class="venue-header">
+      <p class="venue-label">مكان الاحتفال</p>
+      <h2 class="venue-name">قاعة هيلتون الكبرى</h2>
+    </div>
+
+    <!-- Venue image -->
+    <img class="venue-image"
+         src="images/imge.PNG"
+         alt="قاعة صدفة — مكان الاحتفال"
+         draggable="false">
+
+    <!-- Google Maps button -->
+    <a class="venue-map-btn"
+       href="https://maps.app.goo.gl/UciwGFUEBPAUiAqE6"
+       target="_blank"
+       rel="noopener noreferrer">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+           stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+        <circle cx="12" cy="9" r="2.5"/>
+      </svg>
+      <span>عرض الموقع على الخريطة</span>
+    </a>
+
+    <!-- LEQAA Footer -->
+    <footer class="leqaa-footer">
+      <p class="footer-credit">DESIGNED & DEVELOPED BY</p>
+      <h2 class="footer-logo">LEQAA</h2>
+
+      <div class="footer-socials">
+
+        <!-- TikTok -->
+        <a class="footer-social-link"
+           href="https://www.tiktok.com/@.liqaa0?_r=1&amp;_t=ZS-97trIksGFBA"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="TikTok">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+          </svg>
+        </a>
+
+        <!-- Instagram -->
+        <a class="footer-social-link"
+           href="https://www.instagram.com/liqaa.8?igsh=cXFpdWw3YjFlcmY2&amp;utm_source=qr"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+               stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+
+      </div>
+    </footer>
+
+  </section>
+
+  <!-- Background music -->
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="audio/background-music.m4a" type="audio/mp4">
+  </audio>
+
+  <!-- Persistent sound toggle — hidden until invitation opens -->
+  <button id="soundToggle" class="sound-toggle" aria-label="كتم الموسيقى">
+    <!-- Speaker on -->
+    <svg class="icon-sound-on" width="19" height="19" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+    </svg>
+    <!-- Speaker muted -->
+    <svg class="icon-sound-off" width="19" height="19" viewBox="0 0 24 24" fill="none"
+         stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+         stroke-linejoin="round" aria-hidden="true" style="display:none">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+      <line x1="23" y1="9" x2="17" y2="15"/>
+      <line x1="17" y1="9" x2="23" y2="15"/>
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
