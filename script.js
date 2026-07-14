@@ -70,6 +70,9 @@ function openInvitation() {
     page2.classList.remove('page-enter-active');
     page2.classList.add('active');
 
+    // Unlock scrolling so the user can reach the date section
+    document.body.classList.add('unlocked');
+
     isTransitioning = false;
   }, 1450);
 }
@@ -96,4 +99,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.getElementById('sealArea').addEventListener('click', openInvitation);
   document.getElementById('textArea').addEventListener('click', openInvitation);
+
+  // Date section entrance — runs once when the section enters the viewport
+  const dateSection = document.getElementById('date-section');
+  if (dateSection && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          dateSection.classList.add('in-view');
+          observer.unobserve(dateSection);
+        }
+      });
+    }, { threshold: 0.15 });
+    observer.observe(dateSection);
+  }
 });
