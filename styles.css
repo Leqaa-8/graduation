@@ -213,16 +213,16 @@ body {
 }
 
 .graduation-title {
-  font-family: 'Marhey', 'Reem Kufi', 'Amiri', serif;
+  font-family: inherit;
+  font-style: inherit;
   font-size: clamp(2rem, 7vw, 3.4rem);
   font-weight: 400;
-  color: #F8F5F0;
+  color: inherit;
   text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  -webkit-text-stroke: 0.3px rgba(0, 0, 0, 0.08);
-  letter-spacing: 0.12em;
-  line-height: 1.2;
-  margin-top: -0.5rem;
-  transform: scaleX(1.08);
+  letter-spacing: 0;
+  line-height: 1.6;
+  transform: none;
+  margin: 0;
   opacity: 0;
 }
 
