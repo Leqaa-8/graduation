@@ -5,7 +5,10 @@
 }
 
 html {
-  overflow-x: hidden;
+  /* overflow-x: hidden removed — on iOS Safari, combining dir="rtl" with
+     overflow-x:hidden on <html> creates an RTL scroll container whose origin
+     is offset from the screen edge, shifting position:fixed elements right.
+     Body handles horizontal overflow independently. */
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -49,6 +52,7 @@ body.unlocked {
 /* page1 must stay above page2 during the transition */
 #page1 {
   z-index: 10;
+  overflow: hidden; /* guard now that html no longer hides x-overflow */
 }
 
 /* ── Page 1 ── */
@@ -58,6 +62,9 @@ body.unlocked {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .image-container img {
